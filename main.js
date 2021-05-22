@@ -1,6 +1,6 @@
 console.log("code connected");
 var messages = document.getElementById("messages");
-var roomNameInput = "f";
+var roomNameInput = document.getElementById("roomname-input");
 var sendButton = document.getElementById("send-btn");
 var userMessage = document.getElementById("message-input").value;
 
@@ -20,7 +20,7 @@ var lastMessages = [];
 // Take message from server
 async function getMessagesFromServer() {
   // Take room name
-  var roomname = roomNameInput.value;
+  var roomname = "f";
   // Take asynchronous answer
   var response = await fetch(
     `https://fchatiavi.herokuapp.com/get/${roomname}/?offset=0&limit=1000000`
@@ -49,7 +49,7 @@ async function getMessagesFromServer() {
 // Send message
 async function sendUserMessage() {
   // Take room name
-  var roomname = roomNameInput.value;
+  var roomname = "f";
 
   // Take what user wrote in nickname input
   var userNickname = document.getElementById("nickname-input").value;
