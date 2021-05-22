@@ -23,7 +23,7 @@ async function getMessagesFromServer() {
   var roomname = roomNameInput.value;
   // Take asynchronous answer
   var response = await fetch(
-    `https://fchatiavi.herokuapp.com/get/$f/?offset=0&limit=1000000`
+    `https://fchatiavi.herokuapp.com/get/${roomname}/?offset=0&limit=1000000`
   );
   // Decoding it from sting to object javascript
   response = await response.json();
