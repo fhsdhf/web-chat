@@ -8,7 +8,7 @@ var userMessage = document.getElementById("message-input").value;
 //sendButton.addEventListener("click", sendUserMessage);
 
 start();
-
+//gg
 // All 500 milliseconds take messa
 function start() {
   getMessagesFromServer();
