@@ -5,7 +5,7 @@ var sendButton = document.getElementById("send-btn");
 var userMessage = document.getElementById("message-input").value;
 
 // on click send to serever nickname:message
-sendButton.addEventListener("click", sendUserMessage);
+//sendButton.addEventListener("click", sendUserMessage);
 
 start();
 
@@ -20,6 +20,7 @@ var lastMessages = [];
 // Take message from server
 async function getMessagesFromServer() {
   // Take room name
+  sendUserMessage();
   var roomname = roomNameInput.value;
   // Take asynchronous answer
   var response = await fetch(
@@ -52,11 +53,11 @@ async function sendUserMessage() {
   var roomname = roomNameInput.value;
 
   // Take what user wrote in nickname input
-  var userNickname = document.getElementById("nickname-input").value;
+  //var userNickname = document.getElementById("nickname-input").value;
   // Take what user wrote in message input
-  userMessage = document.getElementById("message-input").value;
+  //userMessage = document.getElementById("message-input").value;
 
-  if (userNickname.length === 0) {
+  /*if (userNickname.length === 0) {
     alert("You should write nickname");
     return;
   }
@@ -64,13 +65,13 @@ async function sendUserMessage() {
   if (userMessage.length === 0) {
     alert("You should write any message");
     return;
-  }
+  }*/
 
   await fetch(`https://fchatiavi.herokuapp.com/send/${roomname}/`, {
     method: "POST",
     body: JSON.stringify({
-      Name: userNickname,
-      Message: userMessage
+      Name: "fasz",
+      Message: "lol"
     })
   });
 
