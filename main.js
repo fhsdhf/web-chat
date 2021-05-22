@@ -1,6 +1,6 @@
 console.log("code connected");
 var messages = document.getElementById("messages");
-var roomNameInput = document.getElementById("roomname-input");
+var roomNameInput = "f";
 var sendButton = document.getElementById("send-btn");
 var userMessage = document.getElementById("message-input").value;
 
@@ -69,8 +69,8 @@ async function sendUserMessage() {
   await fetch(`https://fchatiavi.herokuapp.com/send/${roomname}/`, {
     method: "POST",
     body: JSON.stringify({
-      Name: userNickname,
-      Message: userMessage
+      Name: "test-live,
+      Message: "he he he"
     })
   });
 
