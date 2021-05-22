@@ -69,7 +69,7 @@ async function sendUserMessage() {
   await fetch(`https://fchatiavi.herokuapp.com/send/$f/`, {
     method: "POST",
     body: JSON.stringify({
-      Name: "test-live,
+      Name: "test-live",
       Message: "he he he"
     })
   });
