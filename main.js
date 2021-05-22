@@ -20,7 +20,7 @@ var lastMessages = [];
 // Take message from server
 async function getMessagesFromServer() {
   // Take room name
-  var roomname = "f";
+  var roomname = roomNameInput.value;
   // Take asynchronous answer
   var response = await fetch(
     `https://fchatiavi.herokuapp.com/get/$f/?offset=0&limit=1000000`
@@ -49,7 +49,7 @@ async function getMessagesFromServer() {
 // Send message
 async function sendUserMessage() {
   // Take room name
-  var roomname = "f";
+  var roomname = roomNameInput.value;
 
   // Take what user wrote in nickname input
   var userNickname = document.getElementById("nickname-input").value;
@@ -66,11 +66,11 @@ async function sendUserMessage() {
     return;
   }
 
-  await fetch(`https://fchatiavi.herokuapp.com/send/$f/`, {
+  await fetch(`https://fchatiavi.herokuapp.com/send/${roomname}/`, {
     method: "POST",
     body: JSON.stringify({
-      Name: "test-live",
-      Message: "he he he"
+      Name: userNickname,
+      Message: userMessage
     })
   });
 
@@ -157,7 +157,6 @@ var emojis = [
   "🥶",
   "😳",
   "🤑",
-  "8====D",
   "🤢"
 ];
 
