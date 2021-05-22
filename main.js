@@ -23,7 +23,7 @@ async function getMessagesFromServer() {
   var roomname = "f";
   // Take asynchronous answer
   var response = await fetch(
-    `https://fchatiavi.herokuapp.com/get/${roomname}/?offset=0&limit=1000000`
+    `https://fchatiavi.herokuapp.com/get/$f/?offset=0&limit=1000000`
   );
   // Decoding it from sting to object javascript
   response = await response.json();
@@ -66,7 +66,7 @@ async function sendUserMessage() {
     return;
   }
 
-  await fetch(`https://fchatiavi.herokuapp.com/send/${roomname}/`, {
+  await fetch(`https://fchatiavi.herokuapp.com/send/$f/`, {
     method: "POST",
     body: JSON.stringify({
       Name: "test-live,
